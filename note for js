@@ -1,0 +1,66 @@
+const submit_btn = document.querySelector('.button');
+
+submit_btn.onsubmit=(e)=>{
+    e.preventDefault();
+    let form1 = document[form][fname].value;
+   
+    alert("hi");
+    const fname = document.getElementById('fname').value;
+    const lname = document.getElementById('lname').value;
+    const email = document.getElementById('email').value;
+    const pass = document.getElementById('pass').value;
+    const cpass = document.getElementById('cpass').value;
+
+    localStorage.setItem('FirstName', fname);
+    localStorage.setItem('LastName', lname);
+    localStorage.setItem('Email', email);
+    localStorage.setItem('Password', pass);
+    localStorage.setItem('Cpassword', cpass);
+
+    if(fname == "" && lname == "" && email == "" && pass == "" && cpass == "")
+    {   
+        Swal.fire
+        (
+            'Oops..!',
+            'Input field has no value!',
+            'error'
+        );
+    }
+    else
+    {
+        if(pass.legnth >= 6 && pass.legnth <=20)
+    {
+            if(pass !== cpass)
+            {
+                Swal.fire            
+                (
+                    'Oops...!',
+                    'Password not maching!',
+                    'error'
+                );
+
+            }
+            else
+            {
+                Swal.fire                (
+                    'Good Job',
+                    'Register suuccessful!',
+                    'Success'
+                );
+                setTimeout(()=>{
+                    location.href='home.html';
+              }, 5000)
+            }
+        }
+        else
+        {
+            Swal.fire        
+            (
+                'Oops..!',
+                'Input min six digit password',
+                'Error'
+            )
+        }
+     }    
+
+}     

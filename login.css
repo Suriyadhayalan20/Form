@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+}
+
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../../WebDesigning/Assets/Images/loginBG.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: 'roboto' sans-serif;
+}
+
+.form{
+    width: 400px;
+    height: auto;
+    color: #fff;
+    font-family: 'roboto' sans-serif;
+}
+
+.heading{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+input{
+    width: 65%;
+    height: 35px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 6px;
+    background: rgb(255, 255, 255, .1);
+    border: none;
+    color: #fff;
+    padding: 15px;
+    align-items: center;
+}
+
+input::placeholder{
+    color: #fff;
+}
+
+.submit-btn{
+    width: 90px;
+    height: 25px;
+    padding: 0  20px;
+    margin: 50px auto;
+    color: #fff;
+    background: rgb(255, 255, 255, .1);
+}
+
+.submit-btn:hover{
+    background: #fff;  
+    color: black;
+}
+
+
+.link{
+    position: relative;
+    left: 20%;
+    text-transform: capitalize;
+    color: rgb(9, 136, 233, .7);
+    display: block;
+    margin: 30px auto;
+}
+
+
+.link:hover{
+    color: #fff;
+    transition: .1s;
+}
+
+.pwdicon{
+    position: relative;
+    left: 80%;
+}
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>  
+    <form onsubmit="handleSubmit(event)" name="form" class="form" >
+        <h1 class="heading">Login</h1>
+        <input type="text" class="name" placeholder="User Name" required/>
+        <input type="email" class="email" placeholder="Enter Email" required />
+        <input type="password" class="password" placeholder="Enter Password" required/>
+        <i class="fa fa-eye-slash" class="pwdicon"></i>
+        <input type="submit"  class="submit-btn">
+        <a href="register.html" class="link">Don't have an account? Register here</a>
+    </form>
+
+    <script>
+
+        let handleSubmit=(e)=>{
+            e.preventDefault()
+
+            // alert('hi')
+            const text = document.querySelector('.name').value; 
+            const em = document.querySelector('.email').value;
+            const pass = document.querySelector('.password').value
+            
+            localStorage.setItem('UserName', text);
+            localStorage.setItem('Email', em);
+            localStorage.setItem('Password', pass);
+
+           location.href='home.html';
+        }
+        
+        
+            let input = document['task']['.password'];
+            let icon = document.querySelector('.pwdicon');
+
+            if(input.type == 'password')
+            {
+                input.type = 'text'
+                icon.className = 'fa fa-eye'
+            }
+            else
+            {
+                input.type = 'password'
+                icon.className =  'fa fa-eye-slash'
+            }
+
+        
+
+
+    </script>
+</body>
+<!-- <script src="./script.js"></script> -->
+</html>
