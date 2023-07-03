@@ -84,8 +84,11 @@ input::placeholder{
     transition: .1s;
 }
 
-.pwdicon{
+/* .fa-slash{
     position: relative;
-    left: 80%;
-}
+    left:75%;
+    bottom: 50px;
+    width: 10px;
+    cursor: pointer;
+} */
 
