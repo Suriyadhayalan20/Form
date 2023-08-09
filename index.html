@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>  
-    <form onsubmit="handleSubmit(event)" name="form" class="form" >
-        <h1 class="heading">Login</h1>
-        <input type="text" class="name" placeholder="User Name" required/>
-        <input type="email" class="email" placeholder="Enter Email" required />
-    <!-- <div class="password-field"> -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <form onsubmit="handleSubmit(event)" name="form" class="form">
+      <h1 class="heading">Login</h1>
+      <input type="text" class="name" placeholder="User Name" required />
+      <input type="email" class="email" placeholder="Enter Email" required />
+     
+      <span class="password-field">
         <input type="password" name="password" class="password" placeholder="Enter Password" required/>
-        <i style="font-size:20px" class="fa-slash"></i>
-        <!-- <i class="fa fa-eye-slash"></i> -->
-    <!-- </div> -->
-        <input type="submit" class="submit-btn">
-        <a href="register.html" class="link">Don't have an account? Register here</a>
+        <i style="font-size: 20px" class="fa fa-eye-slash" onclick="handleIcon()"></i>
+      </span>
+      <input type="submit" class="submit-btn" />
+      <a href="register.html" class="link">Don't have an account? Register here</a>
+      
     </form>
 
     <script>
+      let handleSubmit = (e) => {
+        e.preventDefault();
 
-        let handleSubmit=(e)=>{
-            e.preventDefault()
+        const text = document.querySelector(".name").value;
+        const em = document.querySelector(".email").value;
+        const pass = document.querySelector(".password").value;
 
-            // alert('hi')
-            const text = document.querySelector('.name').value; 
-            const em = document.querySelector('.email').value;
-            const pass = document.querySelector('.password').value
-            
-            localStorage.setItem('UserName', text);
-            localStorage.setItem('Email', em);
-            localStorage.setItem('Password', pass);
+        localStorage.setItem("UserName", text);
+        localStorage.setItem("Email", em);
+        localStorage.setItem("Password", pass);
 
-           location.href='home.html';
+        
+
+        location.href = "home.html";
+      };
+
+      let handleIcon = () => {
+        let input = document["form"]["password"];
+        let icon = document.querySelector(".fa");
+
+        if (input.type == "password") {
+          input.type = "text";
+          icon.className = "fa fa-eye";
+        } else {
+          input.type = "password";
+          icon.className = "fa fa-eye-slash";
         }
-        
-        
-            let input = document['form']['password'];
-            let icon = document.querySelector('.fa');
-
-            if(input.type == 'password')
-            {
-                input.type = 'text'
-                icon.className = 'fa fa-eye'
-            }
-            else
-            {
-                input.type = 'password'
-                icon.className =  'fa fa-eye-slash'
-            }
-
-        
+      };
     </script>
-</body>
-<!-- <script src="./script.js"></script> -->
+  </body>
 </html>
